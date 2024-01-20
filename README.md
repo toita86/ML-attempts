@@ -32,7 +32,7 @@ The script trains the perceptron to mimic the behavior of an AND gate or an OR g
 - `tresh` and `lam`: Threshold and learning rate parameters.
 - `weights`: Initial weights for the perceptron.
 - `pp(w, x_train)`: Perceptron function.
-- Training the perceptron using the `training_perceptron` function with the specified number of epochs.
+- Training the perceptron using the `training_perceptron` function with the specified number of epochs and if you want to activate the early stopping of the training.
 
 ## Results
 
