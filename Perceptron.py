@@ -38,7 +38,7 @@ print ("Before training: ")
 for tests in range(4):
     print (f"{x_test[tests]} => {pp(weights,x_test[tests])}") 
 
-def training_perceptron(x_train, epochs):
+def training_perceptron(x_train, epochs, early_stop_flag=True):
     global tresh
     global loss_f
     global new_loss
@@ -48,14 +48,15 @@ def training_perceptron(x_train, epochs):
                 weights[1] += lam * (x_train[y][2] - pp(weights, x_train[y]))*x_train[y][1]*x_train[y][0]
                 tresh += lam * (x_train[y][2] - pp(weights, x_train[y]))
                 new_loss += abs(x_train[y][2] - pp(weights, x_train[y]))
-            if abs(loss_f - new_loss) > 0.0000000005:
-                loss_f = new_loss
-            else:
-                return epoch + 1  # Return the epoch where the condition is met
+            if early_stop_flag:
+                if abs(loss_f - new_loss) > 0.0000000005:
+                    loss_f = new_loss
+                else:
+                    return epoch + 1  # Return the epoch where the condition is met
 
     return epochs  # Return the total epochs if the condition is not met
 
-print(f"Epoch trained: {training_perceptron(x_train_AND, 5000)}")
+print(f"Epoch trained: {training_perceptron(x_train_AND, 5000, True)}")
 
 print(f"After training weights: {weights}")
 print ("After training results: ")
