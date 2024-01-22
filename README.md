@@ -11,14 +11,14 @@ Ensure you have Python installed on your system. The script uses the `math` libr
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
+   git clone https://github.com/toita86/ML-attempts.git
+   cd ML-attempts
    ```
 
 2. Run the script:
 
    ```bash
-   python perceptron.py
+   python3 perceptron.py
    ```
 
 The script trains the perceptron to mimic the behavior of an AND gate or an OR gate, depending on the training dataset provided.
@@ -26,12 +26,12 @@ The script trains the perceptron to mimic the behavior of an AND gate or an OR g
 ## Code Overview
 
 - `stable_sigmoid(x)`: Function for a stable implementation of the sigmoid activation function.
-- `ReLu(x)`: Rectified Linear Unit (ReLU) activation function.
+- `ReLU(x)`: Rectified Linear Unit (ReLU) activation function.
 - `x_train_AND` and `x_train_OR`: Training datasets for AND and OR gates, respectively.
 - `x_test`: Test dataset for evaluating the trained perceptron.
 - `tresh` and `lam`: Threshold and learning rate parameters.
 - `weights`: Initial weights for the perceptron.
-- `pp(w, x_train)`: Perceptron function.
+- `perceptron(w, x_train)`: Perceptron function.
 - Training the perceptron using the `training_perceptron` function with the specified number of epochs and if you want to activate the early stopping of the training.
 
 ## Results
