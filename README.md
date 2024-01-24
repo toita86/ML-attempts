@@ -18,7 +18,7 @@ Ensure you have Python installed on your system. The script uses the `math` libr
 2. Run the script:
 
    ```bash
-   python3 perceptron.py
+   python3 Dataset.py
    ```
 
 The script trains the perceptron to mimic the behavior of an AND gate or an OR gate, depending on the training dataset provided.
