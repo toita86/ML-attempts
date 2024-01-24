@@ -1,6 +1,3 @@
-'''
-Teaching a perceptron an AND gate or an OR gate
-'''
 import math
 import random
 
@@ -37,8 +34,8 @@ def perceptron(x_inputs):
     for y in range(len(x_inputs)):
         for k in range(len(weights)):
             weighted_sum += weights[k]*x_inputs[y] + weights[k]*x_inputs[y]
-    #return stable_sigmoid(weighted_sum + tresh)
-    return ReLU(weighted_sum + tresh)
+    return stable_sigmoid(weighted_sum + tresh)
+    #return ReLU(weighted_sum + tresh)
 
 def training(x_train, x_expected, epochs, early_stop_flag=True):
     global tresh
