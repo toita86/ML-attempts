@@ -28,9 +28,10 @@ The script trains the perceptron to mimic the behavior of an AND gate or an OR g
 - `stable_sigmoid(x)`: Function for a stable implementation of the sigmoid activation function.
 - `ReLU(x)`: Rectified Linear Unit (ReLU) activation function.
 - `x_train_AND` and `x_train_OR`: Training datasets for AND and OR gates, respectively.
+- `x_expected_AND`and `x_expected_OR`: Are the expected values for the realative operations
 - `x_test`: Test dataset for evaluating the trained perceptron.
 - `tresh` and `lam`: Threshold and learning rate parameters.
-- `weights`: Initial weights for the perceptron.
+- `weights_init`: Initilization of the weights for the perceptron. Based on the dataset it should automatically choose the number of the weights.
 - `perceptron(w, x_train)`: Perceptron function.
 - Training the perceptron using the `training_perceptron` function with the specified number of epochs and if you want to activate the early stopping of the training.
 
