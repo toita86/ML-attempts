@@ -1,42 +1,42 @@
-# Perceptron Training for AND and OR Gates
-
-This Python script demonstrates the training of a perceptron to function as an AND gate or an OR gate. The perceptron is a simple neural network unit that can learn to make binary decisions based on input data.
+# Perceptron Training
+This code implements a simple perceptron for binary classification. The perceptron is trained using a gradient descent approach to minimize the loss function.
 
 ## Requirements
-
 Ensure you have Python installed on your system. The script uses the `math` library for mathematical operations.
 
 ## Usage
 
-1. Clone the repository to your local machine:
+1. **How to Run:**
+   - Clone the repository to your local machine:
+      ```bash
+      git clone https://github.com/toita86/ML-attempts.git
+      cd ML-attempts
+      ```
 
-   ```bash
-   git clone https://github.com/toita86/ML-attempts.git
-   cd ML-attempts
-   ```
+   - Run the script:
+      ```bash
+      python3 Dataset.py
+      ```
+   
+   - Modify the `x_train` and `x_expected` arrays in the code to represent your dataset and corresponding labels.
+   
+   - Adjust hyperparameters such as `lam` (learning rate) and `epochs` in the `training` function as needed.
 
-2. Run the script:
+2. **Description of Functions:** 
+   - `stable_sigmoid(x)`: Implements a stable version of the sigmoid activation function.
+   - `ReLU(x)`: Implements the Rectified Linear Unit (ReLU) activation function (comment the function you want to use).
+   - `weights_init(x_train, random_init=True)`: Initializes the weights for the perceptron.
+   - `perceptron(x_inputs)`: Computes the output of the perceptron given input features.
+   - `training(x_train, x_expected, epochs, early_stop_flag=True)`: Trains the perceptron using gradient descent.
 
-   ```bash
-   python3 Dataset.py
-   ```
+3. **Important Notes:**
+   - Ensure that the input features (`x_train`) and expected outputs (`x_expected`) are correctly defined for your specific problem.
 
-The script trains the perceptron to mimic the behavior of an AND gate or an OR gate, depending on the training dataset provided.
 
-## Code Overview
+## Info
 
-- `stable_sigmoid(x)`: Function for a stable implementation of the sigmoid activation function.
-- `ReLU(x)`: Rectified Linear Unit (ReLU) activation function.
-- `x_train_AND` and `x_train_OR`: Training datasets for AND and OR gates, respectively.
-- `x_expected_AND`and `x_expected_OR`: Are the expected values for the realative operations
-- `x_test`: Test dataset for evaluating the trained perceptron.
-- `tresh` and `lam`: Threshold and learning rate parameters.
-- `weights_init`: Initilization of the weights for the perceptron. Based on the dataset it should automatically choose the number of the weights.
-- `perceptron(w, x_train)`: Perceptron function.
-- Training the perceptron using the `training_perceptron` function with the specified number of epochs and if you want to activate the early stopping of the training.
+- **License:**
+   - This code is provided under the [GPL-3.0 license](LICENSE).
 
-## Results
-
-After training, the script prints the weights and the results of the perceptron for the test dataset.
-
-Feel free to experiment with different training datasets or hyperparameters to observe how the perceptron learns different logic gates.
+- **Acknowledgments:**
+   - This code is a simple implementation for educational purposes. It may need modification for more complex scenarios or improved performance.
