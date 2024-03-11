@@ -75,7 +75,7 @@ print ("Before training: ")
 for tests in X:
     print (f"{tests} => {per.perceptron(tests)}") 
 
-print(f"Epoch trained: {per.training(X, y, 500000, True)}")
+print(f"Epoch trained: {per.training(X, y, 5000, True)}")
 
 print(f"After training weights: {per.weights}")
 print ("After training results: ")

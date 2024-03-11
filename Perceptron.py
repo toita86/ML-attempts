@@ -1,25 +1,12 @@
 import math
 import random
 
+import Activation_func as act
+
 tresh = 0
-lam = 0.3
 loss_f = 0
 new_loss = 0
 weights = []
-
-def stable_sigmoid(x):
-
-    if x >= 0:
-        z = math.exp(-x)
-        sig = 1 / (1 + z)
-        return sig
-    else:
-        z = math.exp(x)
-        sig = z / (1 + z)
-        return sig
-
-def ReLU(x):
-	return max(0.0, x)
 
 def weights_init(x_train, random_init = True):
     global weights
@@ -30,14 +17,15 @@ def weights_init(x_train, random_init = True):
 
 def perceptron(x_inputs):
     global weights
+    global tresh
     weighted_sum = 0
     for y in range(len(x_inputs)):
         for k in range(len(weights)):
             weighted_sum += weights[k]*x_inputs[y] + weights[k]*x_inputs[y]
-    return stable_sigmoid(weighted_sum + tresh)
-    #return ReLU(weighted_sum + tresh)
+    return act.stable_sigmoid(weighted_sum + tresh)
+    #return act.ReLU(weighted_sum + tresh)
 
-def training(x_train, x_expected, epochs, early_stop_flag=True):
+def training(x_train, x_expected, epochs, early_stop_flag=True, lam=0.3):
     global tresh
     global loss_f
     global new_loss
